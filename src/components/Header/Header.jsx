@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className='bg-slate-100'>
+        <div className='bg-slate-100 mb-12'>
             <div className='flex justify-between mx-auto w-4/5 py-6'>
                 <div className=''>
                     <Link to='/home'><p className='text-2xl font-semibold'>Quizizz</p></Link>
