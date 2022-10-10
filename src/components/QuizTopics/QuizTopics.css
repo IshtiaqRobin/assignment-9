@@ -1,0 +1,17 @@
+.quiz-topics{
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 5px 10px 5px rgb(90, 103, 109);
+}
+
+.img-container img{
+    /* padding: 10px; */
+    width: 260px;
+    height: 280px;
+}
+
+.img-container{
+    width: 260px;
+    height: 280px;
+    border-radius: 10px;
+}
