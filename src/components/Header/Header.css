@@ -1,8 +1,4 @@
 .header-link a {
-    padding-left: 10px;
+    margin-left: 10px;
     text-decoration: none;
-}
-
-.header{
-    box-shadow: 0px 0px 15px rgb(90, 103, 109);
 }
