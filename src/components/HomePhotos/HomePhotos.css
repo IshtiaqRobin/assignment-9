@@ -1,6 +1,6 @@
 .home-photos img{
-    margin: 0 auto;
-    width: 78%;
     height: 250px;
     border-radius: 20px;
+    /* box-shadow: 10px 5px 10px 5px rgb(90, 103, 109);
+     */
 }
