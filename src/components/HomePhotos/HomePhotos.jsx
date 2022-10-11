@@ -7,12 +7,12 @@ const HomePhotos = () => {
             <div className='sm:mx-auto'>
                 <img src="https://www.pinclipart.com/picdir/big/220-2202036_homework-clipart-quiz-quizizz-clipart-png-download.png" alt="" />
             </div>
-            <div className='sm:mx-auto'>
+            <div className='mx-auto'>
                 <img src="https://www.pngfind.com/pngs/m/657-6579796_data-big-data-analytics-vector-hd-png-download.png" alt="" />
             </div>
             <div className='sm:mx-auto'>
-                <p className='text-3xl font-bold'>Check your knowledge and </p>
-                <p className='text-3xl font-bold'><span className='text-sky-700 hover:text-red-600'>observe your reward.</span></p>
+                <p className='text-4xl font-bold'>Check your knowledge and </p>
+                <p className='text-4xl font-bold'><span className='text-sky-700 hover:text-red-600'>accept your reward.</span></p>
             </div>
         </div>
     );
