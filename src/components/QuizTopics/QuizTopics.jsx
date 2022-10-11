@@ -1,16 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './QuizTopics.css'
 
-const QuizTopics = ({ topic, quiz }) => {
-    const { name, logo, total } = topic;
-    const { id } = quiz;
-    
-    const navigate = useNavigate();
-
-    const handleNavigate = () => {
-        navigate(`/quiz/${id}`);
-    }
+const QuizTopics = ({ topic }) => {
+    const { id, name, logo, total } = topic;
 
     return (
         <div className='quiz-topics mx-auto pb-5'>
@@ -27,10 +20,10 @@ const QuizTopics = ({ topic, quiz }) => {
                     </div>
                 </div>
                 <div>
-                    <button onClick={handleNavigate} className='font-semibold bg-blue-600 w-full px-2 py-1 my-2 text-white rounded-md'>Start Practice</button>
+                    <Link to={`/topic/${id}`}><button className='text-lg text-white font-semibold bg-sky-600 w-full rounded-md p-1 mt-2'>Start Practice</button></Link>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 

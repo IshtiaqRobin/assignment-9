@@ -29,6 +29,13 @@ function App() {
           element: <Home></Home>
         },
         {
+          path: '/topic/:topicId',
+          loader: async ({ params }) => {
+            return fetch(`https://openapi.programming-hero.com/api/quiz/${params.topicId}`)
+          },
+          element: <Quizzes></Quizzes>
+        },
+        {
           path: '/statistics',
           element: <Statistics></Statistics>
         },
@@ -40,18 +47,7 @@ function App() {
           path: '/about',
           element: <About></About>
         },
-        {
-          path: '/quizzes',
-          loader: async () => fetch(`https://jsonplaceholder.typicode.com/posts`),
-          element: <Quizzes></Quizzes>
-        },
-        {
-          path: '/quiz/:quizId',
-          loader: async ({ params }) => {
-            return fetch(`https://openapi.programming-hero.com/api/quiz/${params.quizId}`)
-          },
-          element: <QuizTopics></QuizTopics>
-        },
+
         {
           path: '*',
           element: <ErrorPage></ErrorPage>
