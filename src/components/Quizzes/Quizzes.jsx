@@ -7,6 +7,7 @@ const Quizzes = () => {
 
     return (
         <div>
+            <h3 className='text-xl font-bold'>Quiz of <span className='text-red-500'>{quizzes.data.name}</span></h3>
             {
                 quizzes.data.questions.map(topic => <QuizDetails
                     key={topic.id}

@@ -1,15 +1,12 @@
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './App.css';
-import About from './components/About/About';
 import Blog from './components/Blog/Blog';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import Home from './components/Home/Home';
 import Main from './components/layout/Main';
-import QuizDetails from './components/QuizDetails/QuizDetails';
 import Statistics from './components/Statistics/Statistics';
 import Quizzes from './components/Quizzes/Quizzes';
-import QuizTopics from './components/QuizTopics/QuizTopics';
 
 function App() {
 
@@ -43,11 +40,6 @@ function App() {
           path: '/blog',
           element: <Blog></Blog>
         },
-        {
-          path: '/about',
-          element: <About></About>
-        },
-
         {
           path: '*',
           element: <ErrorPage></ErrorPage>
