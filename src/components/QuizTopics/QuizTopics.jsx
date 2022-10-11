@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './QuizTopics.css'
+import { toast } from 'react-toastify';
 
 const QuizTopics = ({ topic }) => {
     const { id, name, logo, total } = topic;
@@ -20,7 +21,7 @@ const QuizTopics = ({ topic }) => {
                     </div>
                 </div>
                 <div>
-                    <Link to={`/topic/${id}`}><button className='text-lg text-white font-semibold bg-sky-600 w-full rounded-md p-1 mt-2'>Start Practice</button></Link>
+                    <Link to={`/topic/${id}`}><button className='text-lg text-white font-semibold bg-sky-600 w-full rounded-md p-1 mt-2' >Start Practice</button></Link>
                 </div>
             </div>
         </div >

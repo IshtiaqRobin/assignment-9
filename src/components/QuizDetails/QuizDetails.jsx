@@ -1,14 +1,20 @@
 
 import React from 'react';
+import { toast } from 'react-toastify';
 import Quiz from '../Quiz/Quiz';
 import './QuizDetails.css';
 
 const QuizDetails = ({ topic }) => {
     const { name, question, correctAnswer, options } = topic;
 
-    // if(ques){
-    //     correctAnswer === 
-    // }
+    const AddToClickHandle = (quiz) => {
+        if (quiz === correctAnswer) {
+            toast.success("WOW")
+        }
+        else{
+            toast.error("BAD")
+        }
+    }
 
     return (
         <div>
@@ -19,7 +25,9 @@ const QuizDetails = ({ topic }) => {
                 <div className='questions'>
                     {
                         options.map(quiz => <Quiz
+                            key={quiz.id}
                             quiz={quiz}
+                            AddToClickHandle={AddToClickHandle}
                         >
                         </Quiz>)
                     }

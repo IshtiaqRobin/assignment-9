@@ -7,6 +7,9 @@ import Home from './components/Home/Home';
 import Main from './components/layout/Main';
 import Statistics from './components/Statistics/Statistics';
 import Quizzes from './components/Quizzes/Quizzes';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 function App() {
 
@@ -51,6 +54,7 @@ function App() {
   return (
     <div className="App">
       <RouterProvider router={router}></RouterProvider>
+      <ToastContainer />
     </div>
   );
 }
