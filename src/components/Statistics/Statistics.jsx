@@ -1,6 +1,6 @@
 import React from 'react';
 import StatisticsLineChart from '../LineChart/StatisticsLineChart';
-import StatisticsPieChart from '../StatisticsPieChart/StatisticsBarChart';
+import StatisticsPieChart from '../BarChart/StatisticsBarChart';
 
 const Statistics = () => {
     return (

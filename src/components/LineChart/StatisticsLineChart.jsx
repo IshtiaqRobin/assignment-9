@@ -1,4 +1,5 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import {
     LineChart,
     Line,
@@ -12,57 +13,48 @@ import {
 } from 'recharts';
 
 const StatisticsLineChart = () => {
-    const data = [
-        {
-            "id": 1,
-            "name": "React",
-            "logo": "https://live.staticflickr.com/65535/52413593240_e00326e727_o.png",
-            "total": 8
-        },
-        {
-            "id": 2,
-            "name": "JavaScript",
-            "logo": "https://live.staticflickr.com/65535/52412638962_12e932256a_o.png",
-            "total": 9
-        },
-        {
-            "id": 4,
-            "name": "CSS",
-            "logo": "https://live.staticflickr.com/65535/52413665713_5977a693cb_o.png",
-            "total": 8
-        },
-        {
-            "id": 5,
-            "name": "Git",
-            "logo": "https://live.staticflickr.com/65535/52412639027_5692c15b3f_o.png",
-            "total": 11
-        }
-    ]
-    return (
-        <div>
-            <LineChart
-                width={500}
-                height={300}
-                data={data}
-                margin={{
-                    top: 20,
-                    right: 50,
-                    left: 20,
-                    bottom: 5,
-                }}
-            >
-                <CartesianGrid strokeDasharray="3 3" />
-                <XAxis dataKey="name" />
-                <YAxis />
-                <Tooltip />
-                <Legend />
-                <ReferenceLine x="Page C" stroke="red" label="Max PV PAGE" />
-                <ReferenceLine y={9800} label="Max" stroke="red" />
-                <Line type="monotone" dataKey="total" stroke="#8884d8" />\
-            </LineChart>
+    const [total, setTotal] = useState([]);
+    useEffect(() => {
+        axios.get('https://openapi.programming-hero.com/api/quiz')
+        .then(data => {
+            const quesLoaded = data.data.data;
+            const quesData = quesLoaded.map(chart =>{
+                const totals = chart.total;
 
-        </div>
-    );
+                const singleQues = {
+                    name: chart.name,
+                    total: totals
+                }
+                return singleQues
+            })
+            setTotal(quesData)
+        });
+}, [])
+return (
+    <div>
+        <LineChart
+            width={500}
+            height={300}
+            data={total}
+            margin={{
+                top: 20,
+                right: 50,
+                left: 20,
+                bottom: 5,
+            }}
+        >
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="name" />
+            <YAxis />
+            <Tooltip />
+            <Legend />
+            <ReferenceLine x="Page C" stroke="red" label="Max PV PAGE" />
+            <ReferenceLine y={9800} label="Max" stroke="red" />
+            <Line type="monotone" dataKey="total" stroke="#8884d8" />\
+        </LineChart>
+
+    </div>
+);
 };
 
 export default StatisticsLineChart;

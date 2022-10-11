@@ -1,11 +1,15 @@
 
-import { faCircleDot } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import Quiz from '../Quiz/Quiz';
 import './QuizDetails.css';
 
 const QuizDetails = ({ topic }) => {
-    const { id, name, question, correctAnswer, options } = topic;
+    const { name, question, correctAnswer, options } = topic;
+
+    // if(ques){
+    //     correctAnswer === 
+    // }
+
     return (
         <div>
             <p>{name}</p>
@@ -13,24 +17,15 @@ const QuizDetails = ({ topic }) => {
                 <h3 className='text-xl mb-4 font-semibold'>{question}</h3>
 
                 <div className='questions'>
-                    <div>
-                        <FontAwesomeIcon className='text-sky-400' icon={faCircleDot}></FontAwesomeIcon>{options[0]}
-                    </div>
+                    {
+                        options.map(quiz => <Quiz
+                            quiz={quiz}
+                        >
+                        </Quiz>)
+                    }
 
-                    <div>
-                        <FontAwesomeIcon className='text-sky-400' icon={faCircleDot}></FontAwesomeIcon>{options[1]}
-                    </div>
-
-                    <div>
-                        <FontAwesomeIcon className='text-sky-400' icon={faCircleDot}></FontAwesomeIcon>{options[2]}
-                    </div>
-
-                    <div>
-                        <FontAwesomeIcon className='text-sky-400' icon={faCircleDot}></FontAwesomeIcon>{options[3]}
-                    </div>
                 </div>
             </div>
-
         </div>
     );
 };
