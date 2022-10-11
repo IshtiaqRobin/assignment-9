@@ -1,10 +1,12 @@
 import React from 'react';
 
-const Quiz = ({quiz}) => {
-    
+const Quiz = ({ quiz }) => {
+
     return (
         <div>
-            {quiz}
+            <label>
+                <input type="radio" name='correctAnswer' value='quiz'/>{quiz}
+            </label>
         </div>
     );
 };
