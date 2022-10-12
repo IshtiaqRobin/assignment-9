@@ -32,7 +32,7 @@ const StatisticsLineChart = () => {
     return (
         <div>
             <LineChart
-                width={400}
+                width={300}
                 height={300}
                 data={total}
                 margin={{
