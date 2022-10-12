@@ -1,4 +1,7 @@
 .header-link a {
+    border: 2px solid rgb(93, 32, 87);
+    border-radius: 5px;
+    padding: 2px 7px;
     margin-left: 10px;
     text-decoration: none;
 }
