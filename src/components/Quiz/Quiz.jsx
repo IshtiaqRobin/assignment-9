@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Quiz = ({ quiz, handleAddToCart }) => {
+const Quiz = ({ quiz, id, handleAddToCart }) => {
 
     return (
         <div>
             <label>
-                <input onClick={() => handleAddToCart(quiz)} type="radio" name='correctAnswer' value='quiz' />{quiz}
+                <input onClick={() => handleAddToCart(quiz)} type="radio" name={id} value='quiz' />{quiz}
             </label>
         </div>
     );

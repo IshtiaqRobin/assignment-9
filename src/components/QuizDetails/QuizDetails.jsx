@@ -8,7 +8,7 @@ import Quiz from '../Quiz/Quiz';
 import './QuizDetails.css';
 
 const QuizDetails = ({ topic }) => {
-    const { name, question, correctAnswer, options } = topic;
+    const { name, id, question, correctAnswer, options } = topic;
 
     const handleAddToCart = (quiz) => {
         if (quiz === correctAnswer) {
@@ -37,27 +37,31 @@ const QuizDetails = ({ topic }) => {
         }
     }
 
+    const htmlStr = question;
+    const newStr = htmlStr.replace(/(<([^>]+)>)/ig, '');
+
     return (
         <div>
             <p>{name}</p>
-            <div className='border-solid bg-blue-100 rounded-md border-black my-4 p-4 border w-1/2 mx-auto'>
+            <div className='border-solid bg-blue-100 rounded-md border-black sm:w-3/4 md:w-4/5 lg:w-1/2  my-4 p-4 border mx-auto'>
                 <div className='flex justify-between'>
                     <div>
                         <Link><FontAwesomeIcon className='mt-2' icon={faEye}></FontAwesomeIcon></Link>
                     </div>
                     <div>
-                        <h3 className='text-xl mb-4 font-semibold'>{question}</h3>
+                        <h3 className='text-xl mb-4 font-semibold'>{newStr}</h3>
                     </div>
                     <div>
 
                     </div>
                 </div>
 
-                <div className='questions grid sm:grid-cols-1 lg:grid-cols-2'>
+                <div className='questions grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
                     {
                         options.map((quiz) => <Quiz
                             key={quiz.toString()} value={quiz}
                             quiz={quiz}
+                            id={id}
                             handleAddToCart={handleAddToCart}
                         >
                         </Quiz>)
