@@ -37,7 +37,7 @@ const StatisticsLineChart = () => {
                 data={total}
                 margin={{
                     top: 20,
-                    right: 50,
+                    right: 20,
                     left: 10,
                     bottom: 5,
                 }}

@@ -1,5 +1,8 @@
 
+import { faEye } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Quiz from '../Quiz/Quiz';
 import './QuizDetails.css';
@@ -9,7 +12,7 @@ const QuizDetails = ({ topic }) => {
 
     const handleAddToCart = (quiz) => {
         if (quiz === correctAnswer) {
-            toast.success("WOW...!! Correct Answer")
+            toast.success("Wow...!! Correct Answer")
         }
         else {
             toast.error("Oops..!! Incorrect Answer")
@@ -20,7 +23,17 @@ const QuizDetails = ({ topic }) => {
         <div>
             <p>{name}</p>
             <div className='border-solid bg-blue-100 rounded-md border-black my-4 p-4 border w-1/2 mx-auto'>
-                <h3 className='text-xl mb-4 font-semibold'>{question}</h3>
+                <div className='flex justify-between'>
+                    <div>
+                        <Link><FontAwesomeIcon className='mt-2' icon={faEye}></FontAwesomeIcon></Link>
+                    </div>
+                    <div>
+                        <h3 className='text-xl mb-4 font-semibold'>{question}</h3>
+                    </div>
+                    <div>
+
+                    </div>
+                </div>
 
                 <div className='questions grid sm:grid-cols-1 lg:grid-cols-2'>
                     {
