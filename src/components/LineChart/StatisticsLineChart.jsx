@@ -51,7 +51,6 @@ const StatisticsLineChart = () => {
                 <ReferenceLine y={9800} label="Max" stroke="red" />
                 <Line type="monotone" dataKey="total" stroke="#8884d8" />\
             </LineChart>
-
         </div>
     );
 };
