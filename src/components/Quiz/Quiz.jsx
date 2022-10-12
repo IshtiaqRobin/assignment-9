@@ -4,8 +4,16 @@ const Quiz = ({ quiz, id, handleAddToCart }) => {
 
     return (
         <div>
-            <label>
-                <input onClick={() => handleAddToCart(quiz)} type="radio" name={id} value='quiz' />{quiz}
+            <label className='flex justify-between'>
+                <div>
+                    <input onClick={() => handleAddToCart(quiz)} type="radio" name={id} value='quiz' />
+                </div>
+                <div>
+                    {quiz}
+                </div>
+                <div>
+
+                </div>
             </label>
         </div>
     );
