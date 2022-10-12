@@ -12,10 +12,28 @@ const QuizDetails = ({ topic }) => {
 
     const handleAddToCart = (quiz) => {
         if (quiz === correctAnswer) {
-            toast.success("Wow...!! Correct Answer")
+            toast('Wow...!! Correct answer', {
+                position: "top-center",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
         else {
-            toast.error("Oops..!! Incorrect Answer")
+            toast.error('Oops...!! Incorrect answer', {
+                position: "top-center",
+                autoClose: 500,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light",
+            });
         }
     }
 
