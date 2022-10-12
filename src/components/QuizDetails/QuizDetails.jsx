@@ -43,7 +43,7 @@ const QuizDetails = ({ topic }) => {
             <div className='border-solid bg-blue-100 rounded-md border-black my-4 p-4 border w-1/2 mx-auto'>
                 <div className='flex justify-between'>
                     <div>
-                        <Link><FontAwesomeIcon className='mt-2' icon={faEye}></FontAwesomeIcon></Link>
+                        <Link><FontAwesomeIcon onClick={handleAddToCart} className='mt-2' icon={faEye}></FontAwesomeIcon></Link>
                     </div>
                     <div>
                         <h3 className='text-xl mb-4 font-semibold'>{question}</h3>
