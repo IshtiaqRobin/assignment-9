@@ -10,6 +10,19 @@ import './QuizDetails.css';
 const QuizDetails = ({ topic }) => {
     const { name, id, question, correctAnswer, options } = topic;
 
+    const AddToHandleEye = (correctAnswer) => {
+        toast(correctAnswer, {
+            position: "top-center",
+            autoClose: 700,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+        });
+    }
+
     const handleAddToCart = (quiz) => {
         if (quiz === correctAnswer) {
             toast('Wow...!! Correct answer', {
@@ -46,7 +59,7 @@ const QuizDetails = ({ topic }) => {
             <div className='border-solid bg-blue-100 rounded-md border-black sm:w-3/4 md:w-4/5 lg:w-1/2  my-4 p-4 border mx-auto'>
                 <div className='flex justify-between'>
                     <div>
-                        <Link><FontAwesomeIcon className='mt-2' icon={faEye}></FontAwesomeIcon></Link>
+                        <Link><FontAwesomeIcon onClick={() => AddToHandleEye(correctAnswer)} className='mt-2' icon={faEye}></FontAwesomeIcon></Link>
                     </div>
                     <div>
                         <h3 className='text-xl mb-4 font-semibold'>{newStr}</h3>

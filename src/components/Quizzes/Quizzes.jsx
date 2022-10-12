@@ -12,6 +12,7 @@ const Quizzes = () => {
                 quizzes.data.questions.map(topic => <QuizDetails
                     key={topic.id}
                     topic={topic}
+
                 ></QuizDetails>)
             }
 
